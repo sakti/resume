@@ -1,13 +1,13 @@
 name: Build PDF
 on: [push]
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile basic LaTeX document
-        uses: ./
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: SaktiDwiCahyonoResume.tex
           working_directory: .
