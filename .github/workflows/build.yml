@@ -11,9 +11,24 @@ jobs:
         with:
           root_file: SaktiDwiCahyonoResume.tex
           working_directory: .
-      - name: Upload
-        uses: actions/upload-artifact@master
+      - name: Add and commit pdf file
+        uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
         with:
-          name: SaktiDwiCahyonoResume.pdf
-          path: ./SaktiDwiCahyonoResume.pdf
-        if: always()
+          # The arguments for the `git add` command (see the paragraph below for more info)
+          # Default: '.'
+          add: 'SaktiDwiCahyonoResume.pdf'
+      
+          # The name of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_name: Sakti Dwi Cahyono
+      
+          # The email of the user that will be displayed as the author of the commit
+          # Default: author of the commit that triggered the run
+          author_email: saktidc@outlook.com
+      
+          # The message for the commit
+          # Default: 'Commit from GitHub Actions'
+          message: 'Update pdf file'
+        env:
+          # This is necessary in order to push a commit to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
