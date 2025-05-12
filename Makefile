@@ -1,2 +1,2 @@
 all:
-	pdflatex -interaction=nonstopmode *.tex
+	typst compile main.typ SaktiDwiCahyonoResume.pdf
