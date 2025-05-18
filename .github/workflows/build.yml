@@ -9,7 +9,7 @@ jobs:
       - name: Setup typst
         uses: typst-community/setup-typst@v4
       - name: list font
-        run: typst font
+        run: typst fonts
       - name: Compile
         run: typst compile main.typ SaktiDwiCahyonoResume.pdf
       - name: Add and commit pdf file
